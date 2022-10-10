@@ -8,7 +8,6 @@ const User = require('../model/user.model')
 app.use(express.json())
 
 router.get('/', async (req, res) => {
-   // res.send("awaaaaaaaaaaaa")
    try {
       const user = await User.find()
       res.json(user)
@@ -18,7 +17,6 @@ router.get('/', async (req, res) => {
 })
 router.get("/login", async (req, resp) => {
    try {
-      console.log("awaaaaaaaaaaaa")
      let res = await User.find();
      console.log(res)
      let response = undefined;
@@ -52,7 +50,6 @@ router.post('/', async (req, res) => {
 })
 router.delete("/:_id",async(req,resp)=>{
    try{
-      console.log("awaaaaaaaaaaaa")
        const user = await User.findById(req.params._id);
        const response = await user.remove()
        resp.json(response);

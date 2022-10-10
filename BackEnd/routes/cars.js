@@ -24,7 +24,6 @@ router.get("/:regNumber",async (req,resp)=>{
 })
 
 router.post("/",async(req,resp)=>{
-    console.log("holaaaa")
     const cars = new Cars({
         regNumber : req.body.regNumber,
         brand : req.body.brand,
@@ -46,7 +45,6 @@ router.post("/",async(req,resp)=>{
 
 
 router.put("/regNo='", async (req, resp) => {
-    console.log("updatee")
     try {
       let res = await Cars.find();
       let obj = undefined;
@@ -71,7 +69,6 @@ router.put("/regNo='", async (req, resp) => {
   });
 
   router.delete("/", async (req, resp) => {
-    console.log("deleteeee")
     try {
       let arr = await Cars.find();
       let response = undefined;
